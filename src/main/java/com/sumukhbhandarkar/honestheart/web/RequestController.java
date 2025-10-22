@@ -1,6 +1,7 @@
 package com.sumukhbhandarkar.honestheart.web;
 
 import com.sumukhbhandarkar.honestheart.domain.BgvRequest;
+import com.sumukhbhandarkar.honestheart.dto.ApiResponse;
 import com.sumukhbhandarkar.honestheart.service.BgvRequestService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
