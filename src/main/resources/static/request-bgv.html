@@ -2,11 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Request BGV Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request BGV Report | HonestHeart</title>
+    <link rel="stylesheet" href="/css/hh-base.css" />
+    <link rel="stylesheet" href="/css/request-bgv.css" />
 </head>
 <body>
-<h2>Request BGV Report</h2>
-<p>This page will allow you to request a report from another person (with consent).</p>
-<a href="/">⬅ Back</a>
+<div class="wrap">
+    <a class="back" href="/">← Back</a>
+    <h1>Request a BGV Report</h1>
+    <p class="note">Enter your partner's email. We’ll send them a verification request. No checks happen until they consent.</p>
+
+    <form id="requestForm" novalidate>
+        <div class="field">
+            <label for="partnerEmail">Partner's email <span class="req">*</span></label>
+            <input id="partnerEmail" name="partnerEmail" type="email" required placeholder="partner@example.com" autocomplete="email" />
+            <div class="error" id="partnerEmailError" aria-live="polite"></div>
+        </div>
+
+        <div class="field">
+            <label for="partnerName">Partner's name <small>(optional)</small></label>
+            <input id="partnerName" name="partnerName" placeholder="Their full name" autocomplete="name" />
+        </div>
+
+        <div class="field">
+            <label for="yourEmail">Your email <small>(optional, for status updates)</small></label>
+            <input id="yourEmail" name="yourEmail" type="email" placeholder="you@example.com" autocomplete="email" />
+        </div>
+
+        <div class="field">
+            <label for="message">Message to include <small>(optional)</small></label>
+            <textarea id="message" name="message" rows="3">Hi, I’d like to verify details via HonestHeart. Please review and consent.</textarea>
+        </div>
+
+        <button class="btn" id="submitBtn" type="submit">Send request</button>
+        <div id="reqMessage" class="msg" style="display:none" role="status" aria-live="polite"></div>
+    </form>
+</div>
+
+<script src="/js/request-bgv.js"></script>
 </body>
 </html>
